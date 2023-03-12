@@ -1,11 +1,11 @@
 <?php
-    class User{
+    class Client{
 
         // Connection
         private $conn;
 
         // Table
-        private $db_table = "User";
+        private $db_table = "Client";
 
         // Columns
         public $id;
@@ -21,7 +21,7 @@
         }
 
         // GET ALL
-        public function getUsers(){
+        public function getClients(){
             $sqlQuery = "SELECT id, name, birth, cpf, rg, phone FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
@@ -29,7 +29,7 @@
         }
 
         // CREATE
-        public function createUser(){
+        public function createClient(){
             $sqlQuery = "INSERT INTO
                         ". $this->db_table ."
                     SET
@@ -62,7 +62,7 @@
         }
 
         // UPDATE
-        public function getSingleUser(){
+        public function getSingleClient(){
             $sqlQuery = "SELECT
                         id, 
                         name, 
@@ -92,7 +92,7 @@
         }        
 
         // UPDATE
-        public function updateUser(){
+        public function updateClient(){
             $sqlQuery = "UPDATE
                         ". $this->db_table ."
                     SET
@@ -128,7 +128,7 @@
         }
 
         // DELETE
-        function deleteUser(){
+        function deleteClient(){
             $sqlQuery = "DELETE FROM " . $this->db_table . " WHERE id = ?";
             $stmt = $this->conn->prepare($sqlQuery);
         

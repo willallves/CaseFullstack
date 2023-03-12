@@ -6,16 +6,16 @@
     header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
     include_once '../config/database.php';
-    include_once '../class/users.php';
+    include_once '../class/clients.php';
 
     $database = new Database();
     $db = $database->getConnection();
 
-    $item = new User($db);
+    $item = new Client($db);
 
     $item->id = isset($_GET['id']) ? $_GET['id'] : die();
   
-    $item->getSingleUser();
+    $item->getSingleClient();
 
     if($item->name != null){
         // create array
@@ -34,6 +34,6 @@
       
     else{
         http_response_code(404);
-        echo json_encode("User not found.");
+        echo json_encode("Client not found.");
     }
 ?>
