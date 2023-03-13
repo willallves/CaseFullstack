@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  api:
+    build: .
+    ports:
+      - '8080:80'
+    volumes:
+      - ./:/var/www/html
+    expose:
+     - 8080
+    depends_on:
+     - db
+
+  db:
+    image: mysql:5.7
+    container_name: db
+    volumes:
+      - ./db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=use
+      - MYSQL_PASSWORD=use123
+      - MYSQL_ROOT_PASSWORD=root123
