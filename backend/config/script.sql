@@ -20,7 +20,7 @@ INSERT INTO `Client` (`name`, `birth`, `cpf`, `rg`, `phone`) VALUES
 ('Matthew Popp', '2013-03-03', '123.456.789-00', '123456', '(92) 9 9999-9999');
 
 
-MySQL does not contains any “ready” options to define the one-to-one relationship, but, if you want to enforce it, you can add a foreign key from one primary key to the other primary key, by doing this, both tables will have the one-to-one relationship automatically.
+/* MySQL does not contains any “ready” options to define the one-to-one relationship, but, if you want to enforce it, you can add a foreign key from one primary key to the other primary key, by doing this, both tables will have the one-to-one relationship automatically.
 
 
 DROP TABLE IF EXISTS `db`.`User`;
@@ -33,6 +33,5 @@ CREATE TABLE `db`.`User` (
 )ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
-
 INSERT INTO `User` (`email`, `password`) VALUES 
-('wiilliian.alves@gmail.com', '123456');
+('wiilliian.alves@gmail.com', '123456'); */
