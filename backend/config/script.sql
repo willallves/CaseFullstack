@@ -33,6 +33,5 @@ CREATE TABLE `db`.`User` (
 )ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
-
 INSERT INTO `User` (`email`, `password`) VALUES 
 ('wiilliian.alves@gmail.com', '123456'); */
